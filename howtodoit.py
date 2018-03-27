@@ -26,27 +26,31 @@ def dev():
     n2 = int(bg.get())
     if n2 ==0:
         answer.delete(0, len(answer.get()))
-        answer.insert(0, 'nqmaa')
+        answer.insert(0, 'Error')
     else:
         result = n1 / n2
-        answer.delete(0, len(answer.get()))
+        answer.delete(0, len(answer.get())) 
         answer.insert(0, result)
 
     #pravi //
 gui = tk.Tk()
 gui.geometry("300x300")
 
-St = tk.Button (gui, text='+', bg = 'magenta', command = sum,  height= 1, padx= 4)
-St.place (x=20, y= 50)
+St = tk.Button (gui, text='+', bg = 'magenta', command = sum,  height= 1, padx= 5)
+St.config( font = ('times' , 14))
+St.place (x=20, y= 30)
 
-Sr = tk.Button (gui, text='-', bg = 'yellow', command = sub, height= 1, padx= 5)
-Sr.place (x=20, y= 80)
+Sr = tk.Button (gui, text='-', bg = 'yellow', command = sub, height= 1, padx= 5 )
+Sr.config( font = ('times' , 15))
+Sr.place (x=20, y= 90)
 
 Sf = tk.Button (gui, text='*', bg = 'magenta',  command = mul, height= 1, padx= 5)
-Sf.place (x=20, y= 110)
+Sf.config( font = ('times' , 15))
+Sf.place (x=20, y= 140)
 
 Sy = tk.Button (gui, text='/', bg = 'yellow',  command = dev, height= 1, padx= 5)
-Sy.place (x=20, y= 140)
+Sy.config( font = ('times' , 15))
+Sy.place (x=20, y= 190)
 
 #tekstovo pole
 pole = tk.Entry(gui)
