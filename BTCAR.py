@@ -1,8 +1,9 @@
 import tkinter as tk
 import serial
+import background as bg
 
 gui = tk.Tk ()
-gui.geometry("600x200")
+gui.geometry("520x200")
 
 #car = serial.Serial('com4', 9600)
 
@@ -22,20 +23,25 @@ def forward ():
     car.write('F'.encode())
 
 
-S = tk.Button (gui, text='STOP', bg = 'lightpink', command=stop, height= 2, padx= 9 )
-S.place (x= 10, y= 110)
+S = tk.Button (gui, text='STOP', bg = 'yellow', command=stop, height= 2, padx= 12 )
+S.config(  font=('times', 12))
+S.place (x= 430, y= 80)
 
-l= tk.Button(gui, text='LEFT  ', bg = 'lightpink', command=left , height= 2, padx= 9)
-l.place (x=90, y= 110)
+l= tk.Button(gui, text='LEFT  ', bg = 'yellow', command=left , height= 2, padx= 9)
+l.config(  font=('times', 12))
+l.place (x=230, y= 80)
 
 R = tk.Button (gui, text='RIGHT', bg = 'lightpink', command=right , height= 2, padx= 7)
-R.place (x=220, y= 110)
+R.config(  font=('times', 12))
+R.place (x=330, y= 80)
 
 B = tk.Button (gui, text='BACK', bg ='lightpink', command=back , height= 2, padx= 10)
-B.place (x=300, y= 110)
+B.config(  font=('times', 12))
+B.place (x=130, y= 80)
 
-F = tk.Button (gui, text='FORWARD', bg ='lightpink', command=forward , height= 2, padx= 10)
-F.place (x=300, y= 10)
+F = tk.Button (gui, text='FORWARD', bg ='yellow', command=forward , height= 2, padx= 1 )
+F.config(  font=('times', 12))
+F.place (x=10, y= 80)
 
 
 gui.mainloop()
